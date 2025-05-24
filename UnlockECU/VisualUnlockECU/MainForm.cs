@@ -164,6 +164,7 @@ namespace VisualUnlockECU
             if (provider.GenerateKey(inByte, outKey, definition.AccessLevel, definition.Parameters))
             {
                 txtKeyValue.Text = BitUtility.BytesToHex(outKey, true);
+                File.AppendAllText("keys.txt", textToAppend + "\\n");
             }
             else
             {
